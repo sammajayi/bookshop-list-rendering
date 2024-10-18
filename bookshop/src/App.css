@@ -13,6 +13,11 @@
 
 };
 
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 /* const coverImageStyle = {
   width: '150px',
   height: '200px',
