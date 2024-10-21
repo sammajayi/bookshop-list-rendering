@@ -74,16 +74,16 @@ const books = [
 function App() {
   return (
     <>
-      <div className="container mx-auto max-w-screen-lg">
+      <div className="container mx-auto max-w-screen-lg bg-blue-300">
         <Header />
         {/* style={{ display: "flex", gap: "50px", flexWrap: "wrap" }} */}
         <div>
-          <img src="./assets/banner.png" alt="" />
+          <img src="./assets/banner.png" alt="" wid/>
         </div>
-        <div className="bg-red-700">
-          <div className="bg-red-700">
+       
+          <div className="flex flex-wrap gap-10 justify-around ">
             {books.map((book) => (
-              <div
+              <div className="items-center"
                 key={book.id}
                 style={{
                   border: "1px solid #ccc",
@@ -91,9 +91,10 @@ function App() {
                   width: "424px",
                   display: "flex",
                   gap: "10px",
+
                 }}
               >
-                <div style={{ width: "300px" }}>
+                <div style={{ width: "300px", height:"300px" }}>
                   <img
                     src={book.coverImage}
                     alt={book.title}
@@ -139,12 +140,11 @@ function App() {
               </div>
             ))}
           </div>
+          <Footer />
         </div>
-
-        <Footer />
-      </div>
     </>
   );
 }
+
 
 export default App;
