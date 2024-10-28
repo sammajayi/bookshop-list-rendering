@@ -1,6 +1,10 @@
-import "./App.css";
+import React from "react";
+import './output.css';
+import './App.css';
+
 import Header from "./components/Header";
 import Footer from "./components/footer";
+import Button from "./components/Button";
 
 const books = [
   {
@@ -74,77 +78,63 @@ const books = [
 function App() {
   return (
     <>
-      <div className="container mx-auto max-w-screen-lg bg-blue-300">
+      <div className="container mx-auto max-w-screen-lg ">
         <Header />
-        {/* style={{ display: "flex", gap: "50px", flexWrap: "wrap" }} */}
         <div>
-          <img src="./assets/banner.png" alt="" wid/>
+          <img src="./assets/banner.png" alt="" />
         </div>
-       
-          <div className="flex flex-wrap gap-10 justify-around ">
-            {books.map((book) => (
-              <div className="items-center"
-                key={book.id}
-                style={{
-                  border: "1px solid #ccc",
-                  padding: "10px",
-                  width: "424px",
-                  display: "flex",
-                  gap: "10px",
 
-                }}
-              >
-                <div style={{ width: "300px", height:"300px" }}>
-                  <img
-                    src={book.coverImage}
-                    alt={book.title}
-                    style={{
-                      width: "100%",
-                      height: "200px",
-                      paddingTop: "90px",
-                    }}
-                  />
-                </div>
-                <div>
-                  <h2>{book.title}</h2>
-                  <p style={{ fontWeight: "bold" }}>{book.author}</p>
-                  <p>{book.reviews}</p>
-                  <p>{book.description}</p>
-                  <div
-                    style={{
-                      display: "flex",
-                      justifyContent: "center",
-                      gap: "5px",
-                      fontWeight: "bold",
-                      paddingTop: "10px",
-                    }}
-                  >
-                    <p style={{ textDecoration: "line-through" }}>
-                      {book.price}
-                    </p>
-                    <p>{book.discountedPrice}</p>
-                  </div>
-                  <button
-                    style={{
-                      backgroundColor: "white",
-                      color: "#4C3DB2",
-                      padding: "10px",
-                      border: "1px solid #4C3DB2",
-                      cursor: "pointer",
-                      width: "150px",
-                    }}
-                  >
-                    Buy Now
-                  </button>
-                </div>
+        <div className="flex gap-10">
+          {books.map((book) => (
+            <div
+              className="flex items-center border-green-900 gap-10 h-[300px]"
+              key={book.id}
+              // style={{
+              //   border: "1px solid #ccc",
+              //   padding: "10px",
+              //   width: "424px",
+              //   display: "flex",
+              //   gap: "10px",
+
+              // }}
+            >
+              <div className="w-16">
+                <img
+                  src={book.coverImage}
+                  alt={book.title}
+                  // style={{
+                  //   width: "100%",
+                  //   height: "200px",
+                  //   paddingTop: "90px",
+                  // }}
+                />
               </div>
-            ))}
-          </div>
-          <Footer />
+              <div>
+                <h2 className="text-xl !font-bold">{book.title}</h2>
+                <p>{book.author}</p>
+                <p>{book.reviews}</p>
+                <p>{book.description}</p>
+                <div
+                  // style={{
+                  //   display: "flex",
+                  //   justifyContent: "center",
+                  //   gap: "5px",
+                  //   fontWeight: "bold",
+                  //   paddingTop: "10px",
+                  // }}
+                >
+                  <p>{book.price}</p>
+                  <p>{book.discountedPrice}</p>
+                </div>
+                <Button />
+              </div>
+            </div>
+          ))}
         </div>
+        <Footer />
+      </div>
     </>
   );
 }
-
 
 export default App;

@@ -1,5 +1,4 @@
 
-
 const Header = () => {
   return (
     <header className="flex justify-around items-center container mx-auto  bg-red-300 h-[10vh]">
@@ -7,7 +6,7 @@ const Header = () => {
         <img src="./assets/logo.png" alt="logo" />
       </div>
 
-      <nav className="flex">
+      <nav className="">
         <ul className="flex">
         <li className="px-3">
           <a href="#books">BOOKS</a>
