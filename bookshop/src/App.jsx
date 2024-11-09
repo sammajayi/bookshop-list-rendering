@@ -1,9 +1,7 @@
-import React from "react";
-import './output.css';
 import './App.css';
 
 import Header from "./components/Header";
-import Footer from "./components/footer";
+import Footer from "./components/Footer";
 import Button from "./components/Button";
 
 const books = [
@@ -11,7 +9,7 @@ const books = [
     id: 1,
     title: "Crazy Rich Asians",
     author: "Kevin Kwan",
-    coverImage: "./assets/cover/crazy.png",
+    coverImage: "./src/assets/cover/crazy.png",
     reviews: "4.5/5",
     description:
       "The outrageously funny debut novel about three super-rich, pedigreed Chinese families and the gossip",
@@ -22,7 +20,7 @@ const books = [
     id: 2,
     title: "The Handmaid's Tale",
     author: "Margaret Atwood",
-    coverImage: "./assets/cover/handmaid.png",
+    coverImage: "./src/assets/cover/handmaid.png",
     reviews: "4.0/5",
     description:
       "This novel can be interpreted as a double narrative, Offred's tale and the handmaids' tales. The night...",
@@ -33,7 +31,7 @@ const books = [
     id: 3,
     title: "Brave New World",
     author: "Aldous Huxley",
-    coverImage: "./assets/cover/brave.png",
+    coverImage: "./src/assets/cover/brave.png",
     reviews: "4.7/5",
     description:
       "Dystopian novel written in 1931 by English author Aldous Huxley, and published in 1932. Largely set in...",
@@ -44,7 +42,7 @@ const books = [
     id: 4,
     title: "Educated",
     author: "Tara Westover",
-    coverImage: "./assets/cover/educated.png",
+    coverImage: "./src/assets/cover/educated.png",
     reviews: "4.2/5",
     description:
       "It is a tale of fierce family loyalty and of the grief that comes with severing the closest of ties. With...",
@@ -55,7 +53,7 @@ const books = [
     id: 5,
     title: "The Weight of Things",
     author: "Marianne Fritz",
-    coverImage: "./assets/cover/weight.png",
+    coverImage: "./src/assets/cover/weight.png",
     reviews: "4.8/5",
     description:
       "You discover not an eccentric fluke of literary nature but rather a brilliant and masterful satiris...",
@@ -66,7 +64,7 @@ const books = [
     id: 6,
     title: "Mothers Stories",
     author: "Chris Power",
-    coverImage: "./assets/cover/mothers.png",
+    coverImage: "./src/assets/cover/mothers.png",
     reviews: "4.3/5",
     description:
       "the stories in Mothers lay bare the emotional and psychic damage of life, love, and abandonment...",
@@ -80,51 +78,31 @@ function App() {
     <>
       <div className="container mx-auto max-w-screen-lg ">
         <Header />
-        <div>
-          <img src="./assets/banner.png" alt="" />
+        <div className=" w-full h-full"> 
+          <img src="./src/assets/banner.png" alt="" />
         </div>
 
-        <div className="flex gap-10">
+        <div className="flex gap-x-32 gap-y-10 flex-wrap">
           {books.map((book) => (
             <div
-              className="flex items-center border-green-900 gap-10 h-[300px]"
+              className="flex w-[25rem] h-[18.75rem] items-center mx-auto"
               key={book.id}
-              // style={{
-              //   border: "1px solid #ccc",
-              //   padding: "10px",
-              //   width: "424px",
-              //   display: "flex",
-              //   gap: "10px",
-
-              // }}
             >
-              <div className="w-16">
-                <img
+              <div className="w-[500px] h-[18.75rem]">
+                <img className="w-full h-full"
                   src={book.coverImage}
                   alt={book.title}
-                  // style={{
-                  //   width: "100%",
-                  //   height: "200px",
-                  //   paddingTop: "90px",
-                  // }}
                 />
               </div>
-              <div>
-                <h2 className="text-xl !font-bold">{book.title}</h2>
-                <p>{book.author}</p>
+              <div className="py-5 ml-5  text-left">
+              <p className="text-[0.8rem] text-[#5C6A79] font-[Montserrat]">{book.author}</p>
+                <h2 className="text-[1rem] !font-bold">{book.title}</h2>
                 <p>{book.reviews}</p>
-                <p>{book.description}</p>
-                <div
-                  // style={{
-                  //   display: "flex",
-                  //   justifyContent: "center",
-                  //   gap: "5px",
-                  //   fontWeight: "bold",
-                  //   paddingTop: "10px",
-                  // }}
+                <p className="text-[0.8rem] text-[#5C6A79] font-[Open_Sans]">{book.description}</p>
+                <div className="flex my-2"
                 >
-                  <p>{book.price}</p>
-                  <p>{book.discountedPrice}</p>
+                  <p className="!font-bold text-[0.9rem] line-through">{book.price}</p>
+                  <p className="text-[0.9rem] text-[#5C6A79] ml-3">{book.discountedPrice}</p>
                 </div>
                 <Button />
               </div>

@@ -1,32 +1,57 @@
+import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
     <header className="flex justify-around items-center container mx-auto  bg-red-300 h-[10vh]">
       <div className="logo pr-16">
-        <img src="./assets/logo.png" alt="logo" />
+        <img src="./src/assets/logo.png" alt="logo" />
       </div>
 
       <nav className="">
         <ul className="flex">
-        <li className="px-3">
-          <a href="#books">BOOKS</a>
-        </li>
-        <li className="px-3">
-          <a href="#audiobooks">AUDIOBOOKS</a>
-        </li>
-        <li className="px-3">
-          <a href="#gifts">STATIONERY & GIFTS</a>
-        </li>
-        <li className="px-3 ">
-          <a href="#blog">BLOG</a>
-        </li>
+          <li className="px-3">
+            <Link to="/Books">BOOKS</Link>
+          
+          </li>
+          <li className="px-3">
+            <Link to="/Audiobooks">
+            AUDIOBOOKS
+            </Link>
+          </li>
+          <li className="px-3">
+            <Link to="/Stationery">
+            STATIONERY & GIFTS
+            </Link>
+          </li>
+          <li className="px-3 ">
+
+            <Link to="/Blog">BLOG</Link>
+          </li>
         </ul>
       </nav>
 
       <div className="flex ml-5">
-        <img className="px-5" src="./assets/user.png" alt="user-profile" />
-        <img className="px-5" src="./assets/search.png" alt="search-bar" />
-        <img className="px-5" src="./assets/cart.png" alt="cart" />
+
+        <Link to="/Login">
+        <img
+          className="px-5 cursor-pointer"
+          src="./src/assets/user.png"
+          alt="user-profile"
+        />
+         </Link>
+
+        <img
+          className="px-5 cursor-pointer"
+          src="./src/assets/search.png"
+          alt="search-bar"
+        />
+        <Link to="/Cart">
+        <img
+          className="px-5 cursor-pointer"
+          src="./src/assets/cart.png"
+          alt="cart"
+        />
+        </Link>
       </div>
     </header>
   );
